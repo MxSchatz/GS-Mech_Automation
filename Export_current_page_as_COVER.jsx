@@ -1,15 +1,10 @@
 // Source JPG export script written by Kasyan Servetsky
-// Revisions and customization written by Winter Schatz
 
 // TO-DO:   + make sure it doesn't export the bleed size
 //          + use activeProcess to make a failsafe
-//          + change/investigate 'pdfExportPreferences' to JPG preferences
-//          + fix save file error (doesn't know how to handle rewriting a file)
-//          + fix save jpg error "Failed to export the JPEG file: Invalid page number specified"(occured on single page document 1704_1_223)
 
 // G&S EXPORT PRESETS NECESSARY
 
-//Global Variables
 var doc = app.activeDocument;
 var page = app.activeWindow.activePage;
 var myDocument = app.activeDocument;
@@ -40,14 +35,19 @@ function main(){
 
 //<snippet>  
 function LR_MOM_pdf(){   
+
     //Sets PDF export options, then exports the active document as PDF.      
-
     with(app.pdfExportPreferences){  
-    app.pdfExportPresets.itemByName("LR_MOM_optimize");
-    
+        pageRange = myDocument.layoutWindows[0].activePage.name;
+        exportingSpread = false;
+        pdfExportRange = ExportRangeOrAllPages.EXPORT_RANGE;
+        pageString = page.name;
+        useDocumentBleeds = false; // If true, uses the document's bleed settings 
     }  
-    //Now export the document. You'll have to fill in your own file path.  
+    // custom export profile, which overrides anything above
+    app.pdfExportPresets.itemByName("LR_MOM_optimize");
 
+    //Now export the document. You'll have to fill in your own file path.  
     myFileName = myDocument.fullName + "";
 
     if (myFileName.indexOf(".indd") != -1) {   
@@ -59,20 +59,25 @@ function LR_MOM_pdf(){
 //<snippet>  
 function LR_MOM_jpg(){  
 
-    //Sets PDF export options, then exports the active document as PDF.    
-    with(app.pdfExportPreferences){ 
+    //Sets PDF export options, then exports the active document as PDF. 
+    var myDocument = app.activeDocument;   
+    var myFileName;
+    var page = app.activeWindow.activePage;
+      
+    with(app.jpegExportPreferences){ 
 
     // app.pdfExportPresets.itemByName("LR_MOM_optimize");
+    jpegExportRange = ExportRangeOrAllPages.EXPORT_RANGE;
     pageRange = myDocument.layoutWindows[0].activePage.name;
     exportingSpread = false;
-    jpegExportRange = ExportRangeOrAllPages.EXPORT_RANGE;
     pageString = page.name;
     exportResolution = 72; // The export resolution expressed as a real number instead of an integer. (Range: 1.0 to 2400.0)
-    antiAlias = false; //  If true, use anti-aliasing for text and vectors during export
+    antiAlias = true; //  If true, use anti-aliasing for text and vectors during export
     embedColorProfile = false; // True to embed the color profile, false otherwise
     jpegColorSpace = JpegColorSpaceEnum.RGB; // One of RGB, CMYK or GRAY
     jpegQuality = JPEGOptionsQuality.LOW; // The compression quality: LOW / MEDIUM / HIGH / MAXIMUM
     jpegRenderingStyle = JPEGOptionsFormat.BASELINE_ENCODING; // The rendering style: BASELINE_ENCODING or PROGRESSIVE_ENCODING
+    simulateOverprint = false; // If true, simulates the effects of overprinting spot and process colors in the same way they would occur when printing
     useDocumentBleeds = false; // If true, uses the document's bleed settings in the exported JPEG.
     }  
     //Now export the document. You'll have to fill in your own file path.

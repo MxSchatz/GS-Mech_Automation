@@ -7,7 +7,9 @@
 // For more InDesign scripts: www.Id-Extras.com 
 
 // Further and customization written by Winter Schatz
-// To-Do
+// 		To-Do:
+//          + FEATURE: Create "Exports" folder, then save PDFs in there
+//          + Crops and Bleeds export doesn't offsed crop marks
 
 
 // d = app.activeDocument; 
@@ -19,6 +21,7 @@ d = app.activeDocument;
 preset1 = app.pdfExportPresets.itemByName("LR_MOM_optimize"); 
 preset2 = app.pdfExportPresets.itemByName("HR Layers"); 
 preset3 = app.pdfExportPresets.itemByName("HRcropsbleed Layers");
+
 if (!(preset1.isValid && preset2.isValid && preset3.isValid)){ 
  alert("One of the presets does not exist. Please check spelling carefully."); 
  exit(); 
