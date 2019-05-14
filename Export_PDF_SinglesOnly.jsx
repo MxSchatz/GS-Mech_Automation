@@ -78,8 +78,8 @@ function LR_MOM_singles(){
 	app.pdfExportPresets.itemByName("LR_MOM_optimize");
 
 	name1 = thePath+"_LRsingles.pdf";
-	// d.exportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1); 
-
+	// d.exportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1); 
 
 }
 
@@ -97,7 +97,8 @@ function HR_singles(){
 	app.pdfExportPresets.itemByName("HR Layers");
 	name2 = thePath+"_HR.pdf";
 
-	// d.exportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2); 
+	// d.exportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name2), false, preset2); 
 
 }
 
@@ -116,8 +117,9 @@ function HR_crops(){
 
 	var preset3 = app.pdfExportPresets.itemByName("HRcropsbleed Layers");
 	app.pdfExportPresets.itemByName("HRcropsbleed Layers");
-	
 	name3 = thePath+"_HRcrops.pdf"; 
+
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name3), false, preset3);
 
 }
 
@@ -152,9 +154,10 @@ function LR_MOM_coverJPG(){
  
     var myRegularExpression = /.indd/gi;   
     // myFileName = myFileName.replace(myRegularExpression, "_LRcover.jpg");
-    name4 = thePath+"_LRcover.jpg";
+    name5 = thePath+"_LRcover.jpg";
     //asynchronousExportFile doesn't work for JPG format, this will be done before 
-    // myDocument.ExportFile(ExportFormat.JPG, new File(myFileName), false);
+    // myDocument.exportFile(ExportFormat.JPG, File(myFileName), false);
+    d.exportFile(ExportFormat.JPG, File(name5), false);
 }
 
 
@@ -173,6 +176,7 @@ function LR_MOM_coverPDF(){
 
     //Now export the document. You'll have to fill in your own file path.      	
 	name4 = thePath+"_LRcover.pdf";
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name4), false, preset1);
 }
 
 
@@ -186,13 +190,13 @@ cover2 = thePath+"LRcover.jpg";
 function myTeardown(){  
 	/*
 	exportFile(ExportFormat.PDF_TYPE, new File(cover1), false, preset1);
-	*/
+	
 	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
 	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
 	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name3), false, preset3);
-	//covers / singles
+	//covers + singles
 	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name4), false, preset1);
-	myDocument.ExportFile(ExportFormat.JPG, new File(name5), false);
-
+	d.exportFile(ExportFormat.JPG, new File(name5), false);
+*/
     alert("Mech exports have started! Check background tasks for progress.");
 }  
