@@ -2,6 +2,8 @@
 
 // TO-DO:   + make sure it doesn't export the bleed size
 //          + use activeProcess to make a failsafe
+//          + event listener for export progress bar
+
 
 // G&S EXPORT PRESETS NECESSARY
 
@@ -53,7 +55,10 @@ function LR_MOM_pdf(){
     if (myFileName.indexOf(".indd") != -1) {   
         var myRegularExpression = /.indd/gi;   
         myFileName = myFileName.replace(myRegularExpression, "_LRcover.pdf");
-        myDocument.exportFile(ExportFormat.pdfType, new File(myFileName), false);       
+
+        //asynchronousExportFile utilizes InDesign background tasks
+        myDocument.asynchronousExportFile(ExportFormat.pdfType, new File(myFileName), false);
+      
     }  
 }
 //<snippet>  
@@ -86,7 +91,7 @@ function LR_MOM_jpg(){
  
     var myRegularExpression = /.indd/gi;   
     myFileName = myFileName.replace(myRegularExpression, "_LRcover.jpg");  
-    myDocument.exportFile(ExportFormat.JPG, new File(myFileName), false);  
+    myDocument.ExportFile(ExportFormat.JPG, new File(myFileName), false);
 
     // doc.exportFile(ExportFormat.JPG, fileName);
     // var file = new File("~/Desktop/" + fileName);   

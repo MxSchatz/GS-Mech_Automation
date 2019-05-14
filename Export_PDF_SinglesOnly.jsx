@@ -133,8 +133,8 @@ i.exportFile(ExportFormat.JPG, new File(cover2), false, preset1);
 
 function myTeardown(){  
 
-	d.exportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
-	d.exportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
-	d.exportFile(ExportFormat.PDF_TYPE, new File(name3), false, preset3);
-    alert("Mech exports complete!");
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
+	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name3), false, preset3);
+    alert("Mech exports have started! Check background tasks for progress.");
 }  
