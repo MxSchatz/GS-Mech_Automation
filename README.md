@@ -7,8 +7,11 @@ How to Install and use InDesign scripts:
 + To find the script and use it, open InDesign, then go to the top menu: Window > Utilities > Scripts
 + To run the script, click on the script in the pannel
 
+Scripts in progress:
++ Mech_Export_Spreads.jsx
+
 Scripts in QA:
-+ Export_Review_PDF.jsx
++ Export_Review_PDF_singles.jsx
 + Mech_Export_Singles.jsx
 
 Mech Export "SinglesOnly" Script TO-DO:
