@@ -1,15 +1,21 @@
 # GS-Mech_Automation
 
-Cover Export Script TO-DO:   
-+ make sure it doesn't export the bleed size
-+ use activeProcess to make a failsafe
-+ change/investigate 'pdfExportPreferences' to JPG preferences
-+ fix save file error (doesn't know how to handle rewriting a file)
-+ fix save jpg error "Failed to export the JPEG file: Invalid page number specified"(occured on single page document 1704_1_223)
+Welcome to the G&S Production Automation Repository!
+
+How to Install and use InDesign scripts:
++ Go to apps > indesign cc 2019 > Scripts > Scripts panel > paste .jsx file here, or make a folder
++ To find the script and use it, open InDesign, then go to the top menu: Window > Utilities > Scripts
++ To run the script, click on the script in the pannel
+
+Scripts in QA:
++ Export_Review_PDF.jsx
++ Mech_Export_Singles.jsx
 
 Mech Export "SinglesOnly" Script TO-DO:
-+ FEATURE: Create "Exports" folder, then save PDFs in there
-+ migrate Stable Cover Export Script
-+ Crops and Bleeds export doesn't offsed crop marks
++ FEATURE: Create "Exports" folder, then save files in there
++ FEATURE: Preflight Failsafe
+
+Script Requests:
 
 Future Scripts:
++ Final Mech with spreads
