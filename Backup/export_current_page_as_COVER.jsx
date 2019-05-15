@@ -58,7 +58,6 @@ function LR_MOM_pdf(){
 
         //asynchronousExportFile utilizes InDesign background tasks
         myDocument.asynchronousExportFile(ExportFormat.pdfType, new File(myFileName), false);
-      
     }  
 }
 //<snippet>  
@@ -90,9 +89,11 @@ function LR_MOM_jpg(){
     myFileName = myDocument.fullName + ""; 
  
     var myRegularExpression = /.indd/gi;   
-    myFileName = myFileName.replace(myRegularExpression, "_LRcover.jpg");
-    //asynchronousExportFile doesn't work for JPG format, this will be done before 
+    myFileName = myFileName.replace(myRegularExpression, "_LRcover.jpg");  
     myDocument.ExportFile(ExportFormat.JPG, new File(myFileName), false);
+
+    // doc.exportFile(ExportFormat.JPG, fileName);
+    // var file = new File("~/Desktop/" + fileName);   
 }  
 //</snippet> 
 

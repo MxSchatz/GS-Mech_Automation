@@ -1,17 +1,8 @@
-// All rights reserved (c) 2015 by Id-Extras.com 
-// Free to use and modify but do not delete this copyright attribution. 
+// Wireframe by Id-Extras.com 
 // Further and customization written by Winter Schatz
 
-// To-Do
 
-// d = app.activeDocument; 
-
-// var p = app.activeWindow.activePage;
-// var i = app.activeWindow.activePage;
-
-// Here you can choose the PDF preset 
-
-//Sets PDF export options, then exports the active document as PDF.
+//global variables
 d = app.activeDocument;
 var doc = app.activeDocument;
 var page = app.activeWindow.activePage;
@@ -41,7 +32,6 @@ function main(){
     if (doc.modified == false){  
 
         // if saved, run the export functions
-        
         LR_MOM_singles();
         HR_singles();
         HR_crops();
@@ -58,28 +48,27 @@ function main(){
 
 function LR_MOM_singles(){
 
-	with(app.pdfExportPreferences){  
-	    pageRange = PageRange.ALL_PAGES;
-	    exportingSpread = false;
-	    useDocumentBleeds = false; // If true, uses the document's bleed settings in the exported JPEG.
-	}
+    with(app.pdfExportPreferences){  
+        pageRange = PageRange.ALL_PAGES;
+        exportingSpread = false;
+        useDocumentBleeds = false; // If true, uses the document's bleed settings in the exported JPEG.
+    }
 
-	if (d.saved){ 
-	 thePath = String(d.fullName).replace(/\..+$/, "") + ".pdf";
-	 thePath = String(new File(thePath).saveDlg()); 
-	} 
-	else{ 
-	 thePath = String((new File).saveDlg()); 
-	}
+    if (d.saved){ 
+     thePath = String(d.fullName).replace(/\..+$/, "") + ".pdf";
+     thePath = String(new File(thePath).saveDlg()); 
+    } 
+    else{ 
+     thePath = String((new File).saveDlg()); 
+    }
 
-	thePath = thePath.replace(/\.pdf$/, "");
+    thePath = thePath.replace(/\.pdf$/, "");
 
- 	preset1 = app.pdfExportPresets.itemByName("LR_MOM_optimize");
-	app.pdfExportPresets.itemByName("LR_MOM_optimize");
+    preset1 = app.pdfExportPresets.itemByName("LR_MOM_optimize");
+    app.pdfExportPresets.itemByName("LR_MOM_optimize");
 
-	name1 = thePath+"_LRsingles.pdf";
-	// d.exportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1); 
+    name1 = thePath+"_LRsingles.pdf";
+    d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1); 
 
 }
 
@@ -87,18 +76,16 @@ function LR_MOM_singles(){
 
 function HR_singles(){
 
-	with(app.pdfExportPreferences){  
-	    pageRange = PageRange.ALL_PAGES;
-	    exportingSpread = false;
-	    useDocumentBleeds = false; // If true, uses the document's bleed settings in the exported JPEG.
-	}
+    with(app.pdfExportPreferences){  
+        pageRange = PageRange.ALL_PAGES;
+        exportingSpread = false;
+        useDocumentBleeds = false; // If true, uses the document's bleed settings in the exported JPEG.
+    }
 
-	var preset2 = app.pdfExportPresets.itemByName("HR Layers"); 
-	app.pdfExportPresets.itemByName("HR Layers");
-	name2 = thePath+"_HR.pdf";
-
-	// d.exportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name2), false, preset2); 
+    var preset2 = app.pdfExportPresets.itemByName("HR Layers"); 
+    app.pdfExportPresets.itemByName("HR Layers");
+    name2 = thePath+"_HR.pdf";
+    d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name2), false, preset2); 
 
 }
 
@@ -106,20 +93,16 @@ function HR_singles(){
 
 function HR_crops(){
 
-	with(app.pdfExportPreferences){  
-	    pageRange = PageRange.ALL_PAGES;
-	    exportingSpread = false;
-	    cropMarks = true;
-	    useDocumentBleeds = true; // If true, uses the document's bleed settings in the exported JPEG.
-	    //use bleed marks to set up bleed mark offset?
+    d = app.activeDocument;
 
-	}
+    var cropsPreset = app.pdfExportPresets.item("HRcropsbleed Layers"); 
+    cropsPreset.useDocumentBleedWithPDF = true;
+    cropsPreset.cropMarks = true;
+    cropsPreset.pageMarksOffset = app.activeDocument.documentPreferences.documentBleedBottomOffset;
 
-	var preset3 = app.pdfExportPresets.itemByName("HRcropsbleed Layers");
-	app.pdfExportPresets.itemByName("HRcropsbleed Layers");
-	name3 = thePath+"_HRcrops.pdf"; 
+    name3 = thePath+"_HRcrops.pdf"; 
 
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name3), false, preset3);
+    d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name3), false, cropsPreset);
 
 }
 
@@ -153,10 +136,8 @@ function LR_MOM_coverJPG(){
     myFileName = myDocument.fullName + ""; 
  
     var myRegularExpression = /.indd/gi;   
-    // myFileName = myFileName.replace(myRegularExpression, "_LRcover.jpg");
     name5 = thePath+"_LRcover.jpg";
-    //asynchronousExportFile doesn't work for JPG format, this will be done before 
-    // myDocument.exportFile(ExportFormat.JPG, File(myFileName), false);
+    alert("Exporting cover jpg");
     d.exportFile(ExportFormat.JPG, File(name5), false);
 }
 
@@ -174,29 +155,13 @@ function LR_MOM_coverPDF(){
     // custom export profile, which overrides anything above
     app.pdfExportPresets.itemByName("LR_MOM_optimize");
 
-    //Now export the document. You'll have to fill in your own file path.      	
-	name4 = thePath+"_LRcover.pdf";
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name4), false, preset1);
+    //Now export the document. You'll have to fill in your own file path.       
+    name4 = thePath+"_LRcover.pdf";
+    d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name4), false, preset1);
 }
-
-
-/* WIP Single pages
-cover1 = thePath+"LRcover.pdf";
-cover2 = thePath+"LRcover.jpg";
-*/
 
 
 
 function myTeardown(){  
-	/*
-	exportFile(ExportFormat.PDF_TYPE, new File(cover1), false, preset1);
-	
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1);
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name2), false, preset2);
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name3), false, preset3);
-	//covers + singles
-	d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name4), false, preset1);
-	d.exportFile(ExportFormat.JPG, new File(name5), false);
-*/
     alert("Mech exports have started! Check background tasks for progress.");
 }  
