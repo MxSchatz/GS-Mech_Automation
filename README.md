@@ -1,6 +1,6 @@
-# GS-Mech_Automation
+# GS-Production_Automation
 
-Welcome to the G&S Production Automation Repository!
+# Welcome to the G&S Production Automation Repository!
 
 How to Install and use InDesign scripts:
 + Go to apps > indesign cc 2019 > Scripts > Scripts panel > paste .jsx file here, or make a folder
@@ -9,6 +9,7 @@ How to Install and use InDesign scripts:
 
 Scripts in progress:
 + Mech_Export_Spreads.jsx
++ Export_Review_PDF_spreads.jsx
 
 Scripts in QA:
 + Export_Review_PDF_singles.jsx
@@ -17,8 +18,17 @@ Scripts in QA:
 Mech Export "SinglesOnly" Script TO-DO:
 + FEATURE: Create "Exports" folder, then save files in there
 + FEATURE: Preflight Failsafe
++ Crop Marks feature that converts properly
 
 Script Requests:
++ Convert RGB to CMYK
++ Convert RGB swatches to CMYK
++ Convert Spot swatches to Process CMYK
++ Create swatches from Colors used in the document
 
 Future Scripts:
 + Final Mech with spreads
+
+Mech_Export_Singles.jsx Quirks:
++ rulers must be on inches for crops and bleeds to export
++ the screen needs to be on the cover page (and that's it) in order for the proper cover page to export
