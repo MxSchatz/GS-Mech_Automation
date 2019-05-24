@@ -28,6 +28,7 @@ Script Requests:
 
 Future Scripts:
 + Final Mech with spreads
++ Create swatches from unnamed used colors in the document
 
 Mech_Export_Singles.jsx Quirks:
 + rulers must be on inches for crops and bleeds to export

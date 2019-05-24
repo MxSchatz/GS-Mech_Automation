@@ -99,7 +99,6 @@ function HR_crops(){
     cropsPreset.useDocumentBleedWithPDF = true;
     cropsPreset.cropMarks = true;
     cropsPreset.pageMarksOffset = app.activeDocument.documentPreferences.documentBleedBottomOffset;
-
     name3 = thePath+"_HRcrops.pdf"; 
 
     d.asynchronousExportFile(ExportFormat.PDF_TYPE, File(name3), false, cropsPreset);
