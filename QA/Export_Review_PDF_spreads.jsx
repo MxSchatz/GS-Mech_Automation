@@ -6,7 +6,7 @@
 d = app.activeDocument; 
 
 //Pulls PDF preset from the library
-var preset1 = app.pdfExportPresets.itemByName("LR_MOM_optimize_spreads");
+var preset1 = app.pdfExportPresets.itemByName("LR_MOM_optimize_Spreads");
 
 // Here you can choose the PDF preset + Overrides preferences above
 

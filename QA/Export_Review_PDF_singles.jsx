@@ -1,7 +1,10 @@
 // All rights reserved (c) 2015 by Id-Extras.com 
 // Free to use and modify but do not delete this copyright attribution. 
-// Features and customization written by Winter Schatz
+// Further features and customization written by Winter Schatz
 
+// This s
+
+// d = app.activeDocument; 
 d = app.activeDocument; 
 
 //export preferences
@@ -31,9 +34,9 @@ else{
 thePath = thePath.replace(/\.pdf$/, ""); 
 
 // file suffix
-name1 = thePath+"_LRpreview.pdf"; 
+name1 = thePath+"_LRpreview_singles.pdf"; 
 
 //export location - Full Documents
 d.asynchronousExportFile(ExportFormat.PDF_TYPE, new File(name1), false, preset1); 
-alert("Export has begun! Check the document's current file path");
+
 

@@ -21,10 +21,13 @@ Mech Export "SinglesOnly" Script TO-DO:
 + Crop Marks feature that converts properly
 
 Script Requests:
++ Mech-Export that relies on more specific export presets
 + Convert RGB to CMYK
 + Convert RGB swatches to CMYK
 + Convert Spot swatches to Process CMYK
 + Create swatches from Colors used in the document
++ Pre-flights for specific printers
++ "Math is hard" inside InDesign or Illustrator
 
 Future Scripts:
 + Final Mech with spreads
