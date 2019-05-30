@@ -14,6 +14,7 @@ Scripts in progress:
 Scripts in QA:
 + Export_Review_PDF_singles.jsx
 + Mech_Export_Singles.jsx
++ Brochure_Review_PDF_singles.jsx
 
 Mech Export "SinglesOnly" Script TO-DO:
 + FEATURE: Create "Exports" folder, then save files in there
