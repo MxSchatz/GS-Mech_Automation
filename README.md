@@ -29,6 +29,9 @@ Script Requests:
 + Create swatches from Colors used in the document
 + Pre-flights for specific printers
 + "Math is hard" inside InDesign or Illustrator
++ Custom GREP search for copyright symbols that aren't superscripted
++ Custom GREP search for layers that are turned off
++ Startup script that sets production preferences - frame edges, text threads, guides and so on.
 
 Future Scripts:
 + Final Mech with spreads
