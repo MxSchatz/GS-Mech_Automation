@@ -13,7 +13,7 @@
   /AutoPositionEPSFiles true
   /AutoRotatePages /All
   /Binding /Left
-  /CalCMYKProfile (U.S. Web Coated \050SWOP\051 v2)
+  /CalCMYKProfile (Coated FOGRA39 \050ISO 12647-2:2004\051)
   /CalGrayProfile (Dot Gain 20%)
   /CalRGBProfile (sRGB IEC61966-2.1)
   /CannotEmbedFontPolicy /Warning
@@ -73,7 +73,7 @@
   /DSCReportingLevel 0
   /DefaultRenderingIntent /Default
   /Description <<
-    /ENU ([Based on 'HRcropsbleed Layers'] [Based on 'HRcropsbleed'] [Based on 'HRcropsbleed'] Use these settings to create Adobe PDF documents for quality printing on desktop printers and proofers.  Created PDF documents can be opened with Acrobat and Adobe Reader 5.0 and later.)
+    /ENU ([Based on 'HRcropsbleed Layers'] [Based on 'HRcropsbleed Layers'] [Based on 'HRcropsbleed'] [Based on 'HRcropsbleed'] Use these settings to create Adobe PDF documents for quality printing on desktop printers and proofers.  Created PDF documents can be opened with Acrobat and Adobe Reader 5.0 and later.)
   >>
   /DetectBlends true
   /DetectCurves 0
@@ -217,7 +217,7 @@
       /IncludeInteractive false
       /IncludeLayers true
       /IncludeProfiles true
-      /MarksOffset 1.50000
+      /MarksOffset 0
       /MarksWeight 0.25000
       /MultimediaHandling /UseObjectSettings
       /Namespace [

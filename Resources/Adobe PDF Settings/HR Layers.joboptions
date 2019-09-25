@@ -73,7 +73,7 @@
   /DSCReportingLevel 0
   /DefaultRenderingIntent /Default
   /Description <<
-    /ENU ([Based on 'HRcropsbleed Layers'] [Based on 'HRcropsbleed'] [Based on 'HRcropsbleed'] Use these settings to create Adobe PDF documents for quality printing on desktop printers and proofers.  Created PDF documents can be opened with Acrobat and Adobe Reader 5.0 and later.)
+    /ENU ([Based on 'HR'] [Based on 'HR'] Use these settings to create Adobe PDF documents for quality printing on desktop printers and proofers.  Created PDF documents can be opened with Acrobat and Adobe Reader 5.0 and later.)
   >>
   /DetectBlends true
   /DetectCurves 0
@@ -194,14 +194,14 @@
     <<
       /AddBleedMarks false
       /AddColorBars false
-      /AddCropMarks true
-      /AddPageInfo true
+      /AddCropMarks false
+      /AddPageInfo false
       /AddRegMarks false
       /BleedOffset [
-        9
-        9
-        9
-        9
+        0
+        0
+        0
+        0
       ]
       /ConvertColors /NoConversion
       /DestinationProfileName ()
@@ -217,7 +217,7 @@
       /IncludeInteractive false
       /IncludeLayers true
       /IncludeProfiles true
-      /MarksOffset 1.50000
+      /MarksOffset 6
       /MarksWeight 0.25000
       /MultimediaHandling /UseObjectSettings
       /Namespace [
@@ -230,7 +230,7 @@
       /PreserveEditing true
       /UntaggedCMYKHandling /LeaveUntagged
       /UntaggedRGBHandling /LeaveUntagged
-      /UseDocumentBleed true
+      /UseDocumentBleed false
     >>
     <<
       /AllowImageBreaks true

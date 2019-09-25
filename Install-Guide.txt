@@ -1,0 +1,71 @@
+------------------------------------------------------------
+OVERVIEW
+------------------------------------------------------------
+
+MECH SCRIPTS
+Syng_Mech_Export_Singles.jsx
+*Exports Syngenta Required Mech Files*
+
+Generic_Mech_Export_Singles.jsx
+*Exports Basic Mech Files*
+
+REVIEW SCRIPTS
+Brochure_Review_PDF_singles.jsx
+Review_PDF_singles.jsx
+Review_HR_PDF_singles.jsx
+
+
+
+------------------------------------------------------------
+INSTALL SCRIPTS
+‎⁨------------------------------------------------------------
+
+Option 1 | Direct:
+Macintosh HD⁩ ▸ ⁨Users⁩ ▸ Yourscreenname ▸ ⁨Library⁩ ▸ ⁨Preferences⁩ ▸ ⁨Adobe InDesign⁩ ▸ ⁨Version 14.0⁩ ▸ ⁨en_US⁩ ▸ ⁨Scripts⁩ ▸ ⁨Scripts Panel⁩.
+
+Option 2 | From InDesign:
+Pull up the script pannel in InDesign, right click on the user folder and select "Reveal in Finder". Paste scripts into there.
+
+
+
+------------------------------------------------------------
+PDF JOB DEPENDENCIES
+------------------------------------------------------------
+
+Install Location:
+‎⁨Macintosh HD⁩ ▸ ⁨Users⁩ ▸ Yourscreenname ▸ ⁨Library⁩ ▸ ⁨Application Support⁩ ▸ ⁨Adobe⁩ ▸ ⁨Adobe PDF⁩ ▸ ⁨Settings⁩
+
+
+
+------------------------------------------------------------
+QUIRKS
+------------------------------------------------------------
+
+General Stuff
+Make sure Rulers are inches
+Doesn't support lettered pages
+Export path and naming efficiencies don't work using Mountain Duck
+
+Syng_Mech_Export_Singles.jsx
+Zoom-in to the first page for cover page feature
+
+
+
+------------------------------------------------------------
+BUGS
+------------------------------------------------------------
+
+Syng_Mech_Export_Singles.jsx
+Generic_Mech_Export_Singles.jsx
+
+Latest InDesign version breaks HR_Crops.
+Manually Export HR_Crops for now.
+
+
+
+------------------------------------------------------------
+EXTRA CREDIT
+------------------------------------------------------------
++ Get updates, Submit ideas, ask for help and report bugs on the Slack Channel: #qa-reporting
++ See upcoming requests and status on GitHub: https://github.com/MxSchatz/GS-Mech_Automation
++ Collaborate! Submit a request to collaborate on GitHub and help out!
